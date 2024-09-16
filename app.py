@@ -7,7 +7,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import sequence
 
 # Load the Keras model
-model = load_model("./hateAndOffensiveDetection_model.h5")
+model = load_model("hateAndOffensiveDetection_model.h5")
 
 # Load the tokenizer
 with open('tokenizer.pickle', 'rb') as handle:
