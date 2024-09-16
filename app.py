@@ -43,11 +43,8 @@ def clean_and_lemmatize_text(text):
     # Lemmatize each word
     lemmatized_words = [lemmatizer.lemmatize(word) for word in words]
     
-    # Filter words that are in the tokenizer's vocabulary
-    filtered_words = [word for word in lemmatized_words if word in tokenizer.word_index]
-    
     # Join filtered words back into a sentence
-    return ' '.join(filtered_words)
+    return ' '.join(lemmatized_words)
 
 # Streamlit interface
 st.title("Hate and Offensive Language Detection")
@@ -75,7 +72,5 @@ if st.button("Predict"):
                 st.write("Result: No hate or offensive language detected.")
             else:
                 st.write("Result: Hate and offensive language detected.")
-        else:
-            st.write("No valid words in the input to process.")
     else:
         st.write("Please enter some text.")
