@@ -1,5 +1,4 @@
 import streamlit as st
-import os
 import re
 import string
 import pickle
@@ -8,18 +7,11 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import sequence
 
 # Load the Keras model
-if os.path.exists("./hateAndOffensiveDetection_model.h5"):
-    model = load_model("./hateAndOffensiveDetection_model.h5")
-else:
-    print("Model file not found!")
+model = load_model("./hateAndOffensiveDetection_model.h5")
 
 # Load the tokenizer
-# Check if the tokenizer file exists
-if os.path.exists('tokenizer.pickle'):
-    with open('tokenizer.pickle', 'rb') as handle:
-        tokenizer = pickle.load(handle)
-else:
-    print("Tokenizer file not found!")
+with open('tokenizer.pickle', 'rb') as handle:
+    tokenizer = pickle.load(handle)
 
 # Function to clean text (without lemmatization)
 def clean_text(text):
