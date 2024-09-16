@@ -3,12 +3,11 @@
 To set up and run this project locally, follow these steps:
 
 1. **Clone the Repository:**
-
     ```bash
-    git clone https://github.com/your-username/your-repo.git
-    cd your-repo
+    git clone https://github.com/negi-007/Hate-Speech-And-Offensive-Language-Detection.git
+    cd Hate-Speech-And-Offensive-Language-Detection
     ```
-
+    
 2. **Create a Conda Virtual Environment**
     ```bash
     conda create --prefix ./venv python=3.12
